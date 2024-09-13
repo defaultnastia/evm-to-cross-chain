@@ -28,7 +28,7 @@ const App = () => {
   }, [ETHER_CONTRACT, infuraSigner]);
 
   //WEB3 (BASE) Configuration
-  const BASE_CONTRACT = import.meta.env.VITE_BASE_CONTRACT;
+  // const BASE_CONTRACT = import.meta.env.VITE_BASE_CONTRACT;
 
   const getWeb3Provider = async () => {
     if (!window.ethereum) window.alert("No wallet found!");
@@ -39,12 +39,12 @@ const App = () => {
     }
   };
 
-  const web3Contract = useMemo(async () => {
-    const abi = ["function symbol() view returns (string)"];
-    const provider = new ethers.BrowserProvider(window.ethereum);
-    const signer = await provider.getSigner();
-    return new Contract(BASE_CONTRACT, abi, signer);
-  }, [BASE_CONTRACT]);
+  // const web3Contract = useMemo(async () => {
+  //   const abi = ["function symbol() view returns (string)"];
+  //   const provider = new ethers.BrowserProvider(window.ethereum);
+  //   const signer = await provider.getSigner();
+  //   return new Contract(BASE_CONTRACT, abi, signer);
+  // }, [BASE_CONTRACT]);
 
   //APP
   const [InfuraTxSent, setInfuraTxSent] = useState<string | null>(null);
